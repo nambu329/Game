@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>project</title>
+<style>
+*{margin : 0px}
+#stage{
+	width : 100%;
+	height : 950px;
+	background : url("./gameitem/background.jpg");
+	position : relative;
+}
+#road{
+	width : 2100px; 
+	position : absolute;
+	left : -100px;
+	top : 800px;
+}
+#scoreBoard{
+	width : 600px;
+	height : 100px;
+	background : none;
+	position : absolute;
+	left : 0px;
+	top : 30px;
+	font-size : 20px;
+	text-align : center;
+	color : white;
+}
+#recordBox{
+	width : 600px;
+	height : 200px;
+	background : red;	
+	position : absolute;
+	left : 35%;
+	top : 0%;
+	text-align : center;
+	padding-top : 100px;
+	font-size : 30px;
+	display : none;
+}
+</style>
+<script src = "./lib/common.js"></script>
+<script src = "./ObjectManager.js"></script>
+<script src = "./ObjectMain.js"></script>
+<script src = "./Sensor.js"></script>
+<script src = "./Obstacle.js"></script>
+<script src = "./IceDrop.js"></script>
+<script src = "./Block.js"></script>
+<script src = "./Monster1.js"></script>
+<script src = "./Monster2.js"></script>
+<script src = "./MainChar.js"></script>
+<script src = "./SnowBall.js"></script>
+<script src = "./Ground.js"></script>
+
+<script>
+var stage;
+var road;
+var bgX = 0;
+var objectManager;
+var obs;
+var obsCount = 0;
+var iceDrop;
+var iceDropCount = 0;
+var monster;
+var key; //컨트롤러 키코드 확인용
+var num = 1;
+var mainChar;
+var ground;
+var block1;
+var block2;
+var airBlock = [];
+var sizeRanNum;
+var dropTerm = 10000;
+var obsTerm = 10000;
+var recordBox;
+var scoreBoard;
+var score = 0;
+var life = 6;
+var speedLevel = 1;
+var mon1KillCount = 0;
+var mon2KillCount = 0;
+var st; //셋타임
+var on = true;
+
+addEventListener("load", function(){
+	init();
+});
+function init(){
+	stage = document.getElementById("stage");
+	road = document.getElementById("road");
+	scoreBoard = document.getElementById("scoreBoard");
+	recordBox = document.getElementById("recordBox");
+	objectManager = new ObjectManager();
+	createGround();
+	createMainChar();
+	createObs();
+	createDrop();
+	createBlock1();
+	createBlock2();
+	createMonster1();
+	createMonster2();
+	gameLoop();
+}
+//배경처리
+function background_move(){
+	bgX -= 1;
+	stage.style.backgroundPosition = bgX+"px 0px";
+}
+//바닥
+function createGround(){
+	ground = new Ground("FLOOR", stage, 2100, 164, -100, 880, 0, 0, "","")
+	objectManager.addObject(ground);
+}
+//캐릭터 생성
+function createMainChar(){
+	addEventListener("keydown", function(){
+		joystick();
+	});
+	addEventListener("keyup", function(){
+		stop();
+	});
+	mainChar = new MainChar("MAINCHAR", stage, 90, 150, 100, 100, 0, 0, "./gameitem/MainChar/move1.png","");
+	objectManager.addObject(mainChar);
+}
+
+//컨트롤러
+function joystick(){
+	key=event.keyCode; 
+	jumpKey = event.keyCode;
+	if(key == 37){
+		mainChar.speedX = -2;
+	}
+	if(key == 39){
+		mainChar.speedX = 2;
+	}
+	if(key == 40){
+		mainChar.speedY = 2;
+	}
+	if(jumpKey == 88){
+		if(mainChar.jumpCoolDown < 0){
+			mainChar.speedY = -6.5;
+			mainChar.jumpCoolDown = 230;
+		}
+	}
+	if(key == 90){
+	//눈공생성
+		var snowBall = new SnowBall("BALL", stage, 30, 30, mainChar.x, mainChar.y + 50, 0, 0, "./gameitem/snowball.png", "");
+			if(mainChar.motionFlag){
+				snowBall.speedX = 5;
+			}
+			else{
+				snowBall.speedX = -5;		
+			}
+		objectManager.addObject(snowBall);		
+	}
+}
+function stop(){
+	mainChar.speedX = 0;
+	mainChar.speedY = 0;
+}
+
+//장애물생성
+function createObs(){//길이 랜덤
+	obs = new Obstacle("OBS", stage, 100, 350, 1900, 530, -1, 0, "./gameitem/icicle_bottom.png","");
+	objectManager.addObject(obs);
+	setTimeout("createObs()", obsTerm);//2000대신 랜덤
+}
+//낙하물생성
+function createDrop(){
+	iceDrop = new IceDrop("DROP", stage, 100, 200, mainChar.x, 0, 0, 1, "./gameitem/icicle.png","");
+	objectManager.addObject(iceDrop);
+	setTimeout("createDrop()", dropTerm);//5000대신 랜덤
+}
+//공중블럭생성(2층)
+function createBlock1(){
+	for(var i = 0; i < 2; i += 1){
+		block1 = new Block("BLOCK", stage, 300, 135, 500 + 600 * i, 270, 0, 0, "./gameitem/Block1.PNG","");
+		airBlock.push(block1);
+	}
+}
+//공중블럭 생성(1층)
+function createBlock2(){
+	for(var i = 0; i < 3; i += 1){
+		block2 = new Block("BLOCK", stage, 350, 110, 200 + 600 * i, 600, 0, 0, "./gameitem/Block2.PNG","");
+		airBlock.push(block2);
+	}
+}
+//몬스터 생성(1층)
+function createMonster1(){
+	monster1 = new Monster1("MON1", stage, 100, 100, 200, 500, 1, 0, "./gameitem/green_right.png","");
+	objectManager.addObject(monster1);
+}	
+function mon1Remake(){
+	if(mon1KillCount > 0){
+		setTimeout("createMonster1()", 1000); //완성때는 10초
+	}
+	mon1KillCount = 0;
+}
+//몬스터 생성(2층)
+function createMonster2(){
+	monster2 = new Monster2("MON2", stage, 100, 100, 500, 170, 1, 0, "./gameitem/ghost.png","");
+	objectManager.addObject(monster2);
+}
+function mon2Remake(){
+	if(mon2KillCount > 0){
+		setTimeout("createMonster2()", 1000); //완성때는 5초
+	}
+	mon2KillCount = 0;
+}
+//점수테이블
+function scoreTable(){
+	score += 1;
+	var str = "";
+	str += "<table width = '600px' border = '0px'>";
+	str += "<tr>";
+	str += "<td>점수 : " + score + "점</td>";
+	str += "<td>목숨 : " + life + "</td>";
+	str += "<td>장애물 등장속도  : " + speedLevel + " 단계</td>";
+	str += "</tr>";
+	str += "</table>";
+	if(score > 1000 && score <= 2000){
+		speedLevel = 2;
+		dropTerm = 10000 * 0.9;
+		obsTerm = 10000 * 0.9;
+	}
+	if(score > 2000 && score <= 3500){
+		speedLevel = 3;
+		dropTerm = 10000 * 0.85;
+		obsTerm = 10000 * 0.80;
+	}
+	if(score > 3500 && score <= 5000){
+		speedLevel = 4;
+		dropTerm = 10000 * 0.75;
+		obsTerm = 10000 * 0.70;
+	}
+	if(score > 5000){
+		speedLevel = "MAX";
+		dropTerm = 10000 * 0.7;
+		obsTerm = 10000 * 0.6;
+	}
+	scoreBoard.innerHTML = str;
+}
+//결과출력
+function record(){
+	if(on == false){	
+		recordBox.style.display = "block";
+		recordBox.innerHTML = "<p>당신의 점수는 : " + score + "점 입니다.</p><p>화면을 누르시면 재시작합니다.</p>";
+		addEventListener("click", function(){
+			location.reload()
+		});
+	}
+}
+//엔진
+function gameLoop(){
+	if(on == true){
+		scoreTable();
+		background_move();
+		mon1Remake();
+		mon2Remake();
+		monster1.tick();
+		monster2.tick();
+		mainChar.tick();
+		objectManager.tick();
+		objectManager.render();
+		st = setTimeout("gameLoop()", 10);
+	}
+}
+</script>
+</head>
+<body>
+	<div id = "stage">
+		<div id = "scoreBoard"></div>
+		<div id = "recordBox"></div>
+		<img src="./gameitem/longBottom.png" height="164" border="0" id = "road">
+	</div>
+</body>
+</html>
