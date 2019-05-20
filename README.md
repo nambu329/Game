@@ -28,23 +28,23 @@
     </td>
   <tr>
     <td>
-    <img src="" width="250px"/>
+    <img src="https://user-images.githubusercontent.com/47166170/58057025-60c3ba80-7b9e-11e9-87f7-47567cb95c44.PNG" width="250px"/>
     </td>
     <td>
-      ▶ Login Page<br>
+      ▶ 구조물 구현<br>
       <ul>
-        <li>오라클 내에 등록되어있는 계정들을 확인 할 수 있음</li>
-        <li>계정선택후 알맞은 비밀번호를 입력하면 해당 계정으로 오라클 접속수행, 계정테이블을 확인 할 수 있음</li>
+        <li>최상위 객체인 objectmain을 상속받은 후 각 구조물마다 클래스를 생성한다.</li>
+        <li>메인 페이지에서 정의한 클래스를 new로 생성해서 맵에 배치시킨다.</li>
         <table>
           <tr>
-            <td colspan="2">로그인 후 계정테이블 창</td>
+            <td colspan="2">상속 후 구조물구현 코드와 메인에서의 구현</td>
           </tr>
           <tr>
             <td>
-            <img src=""/> 
+            <img src="https://user-images.githubusercontent.com/47166170/58057142-cca62300-7b9e-11e9-8863-96f0c62fa39e.PNG"/> 
             </td>
             <td>
-              <img src=""/>
+              <img src="https://user-images.githubusercontent.com/47166170/58057143-cca62300-7b9e-11e9-905b-702bbffadc66.PNG"/>
             </td>
           </tr>
         </table>
