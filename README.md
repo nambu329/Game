@@ -102,8 +102,6 @@
     </td>
   </tr>
   <tr>
-    <img src="https://user-images.githubusercontent.com/47166170/58057355-88ffe900-7b9f-11e9-8996-ab149f949206.PNG" width="250px"/>
-    </td>
     <td>
       ▶ 게임 진행<br>
       <ul>
@@ -121,30 +119,6 @@
             </td>
              <td>
               <img src="https://user-images.githubusercontent.com/47166170/58057860-9d44e580-7ba1-11e9-81cf-122e3232a4fe.PNG" width="250px"/>
-            </td>
-          </tr>
-        </table>
-      </ul>
-    </td>
-  </tr>
-    </td>
-    <td>
-      ▶ 메인 캐릭터 구현<br>
-      <ul>
-        <li>캐릭터 이미지 프레임을 위해 여러 개의 이미지를 등록한다.</li>
-        <li>방향키마다 이미지 순서를 순환시켜 자연스러운 이동이 가능하게한다.</li>
-        <li>특정키를 누르면 투사체(눈) 객체를 생성하여 매개변수로 넣은 x의 속도만큼 이동하도록 구현한다.</li>
-        <li>캐릭터 이미지에 충돌을 감지할 수 있는 바를 만들어 충돌감지를 할 수 있게 한다..</li>
-        <table>
-          <tr>
-            <td colspan="2">캐릭터 생성(충돌감지용 바와 애니메이션 처리)</td>
-          </tr>
-          <tr>
-            <td>
-              <img src="https://user-images.githubusercontent.com/47166170/58057664-a8e3dc80-7ba0-11e9-8880-48736393816c.PNG" width="250px"/>
-            </td>
-             <td>
-              <img src="https://user-images.githubusercontent.com/47166170/58057665-a8e3dc80-7ba0-11e9-9ca9-8959f8cedea0.PNG" width="250px"/>
             </td>
           </tr>
         </table>
