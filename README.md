@@ -103,6 +103,9 @@
   </tr>
   <tr>
     <td>
+    <img src="https://user-images.githubusercontent.com/47166170/58058104-8fdc2b00-7ba2-11e9-97f6-8edaea56f184.PNG" width="250px"/>
+    </td>
+    <td>
       ▶ 게임 진행<br>
       <ul>
         <li>게임 시작시 방향키로 조종하며 z키로 미사일, x키로 점프하며 진행한다.</li>
