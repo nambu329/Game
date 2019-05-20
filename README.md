@@ -28,7 +28,7 @@
     </td>
   <tr>
     <td>
-    <img src="https://user-images.githubusercontent.com/47166170/58057025-60c3ba80-7b9e-11e9-87f7-47567cb95c44.PNG" width="250px"/>
+    <img src="https://user-images.githubusercontent.com/47166170/58058303-5657ef80-7ba3-11e9-9963-b858e488ad3f.PNG" width="250px"/>
     </td>
     <td>
       ▶ 구조물 구현<br>
