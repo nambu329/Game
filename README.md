@@ -102,9 +102,6 @@
     </td>
   </tr>
   <tr>
-    <td>
-    <img src="  <tr>
-    <td>
     <img src="https://user-images.githubusercontent.com/47166170/58057355-88ffe900-7b9f-11e9-8996-ab149f949206.PNG" width="250px"/>
     </td>
     <td>
@@ -129,7 +126,7 @@
         </table>
       </ul>
     </td>
-  </tr>" width="250px"/>
+  </tr>
     </td>
     <td>
       ▶ 메인 캐릭터 구현<br>
