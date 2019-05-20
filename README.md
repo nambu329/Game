@@ -13,7 +13,7 @@
   </tr>
   <tr>
     <td>
-    <img src="" width="250px"/>
+    <img src="https://user-images.githubusercontent.com/47166170/58056914-de3afb00-7b9d-11e9-928d-7f82f8745a8d.PNG" width="250px"/>
     </td>
     <td>
       ▶ 프로그램 구조<br>
@@ -21,23 +21,10 @@
   </tr>
   <tr>
     <td>
-    <img src="" width="250px"/>
+    <img src="https://user-images.githubusercontent.com/47166170/58056954-06c2f500-7b9e-11e9-94a7-d2483d8de2c3.PNG" width="250px"/>
     </td>
     <td>
       ▶ 프로그램 최초 실행 메인화면<br>
-      <ul>
-        <li>JDBC를 이용해 Connection을 얻어온 후 파일의 로그인정보를 눌러 오라클 계정접속 확인</li>
-        <table>
-          <tr>
-            <td colspan="1">오라클 접속을 담당하는 ConnectionManager</td>
-          </tr>
-          <tr>
-            <td>
-            <img src="" width="400px"/> 
-            </td>
-  </tr>
-        </table>
-      </ul>
     </td>
   <tr>
     <td>
