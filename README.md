@@ -53,26 +53,21 @@
   </tr>
   <tr>
     <td>
-    <img src="" width="250px"/>
+    <img src="https://user-images.githubusercontent.com/47166170/58057354-88675280-7b9f-11e9-8b23-8651bed1e7e4.PNG" width="250px"/>
     </td>
     <td>
-      ▶ 단축키를 활용한 엑셀 저장<br>
+      ▶ 장애물과 몬스터 구현<br>
       <ul>
-        <li>단축키를 지정해 명령 수행 가능.</li>
-        <li>그중 Ctrl+S로 엑셀파일로 빼내 원하는 위치에 저장이 가능(엑셀저장은 poi.jar 라이브러리를 가져와서 수행).</li>
-        <li>HSSFWorkbook 객체로 엑셀파일 생성후 ResultSetMetaData를 통해 DB테이블의 컬럼조사, 자료들을 가져온다.</li>
-        <li>ResultSet객체로 DB의 줄 조사 이후 각 줄마다 Swing에서 사전에 정의한 테이블에 덮어 씌움</li>
-        <li>이후 저장경로를 생성하여 File객체를 만들어 해당파일을 엑셀로 저장</li>
+        <li>ObjectMain을 상속받은 채로 각각 클래스를 만든다.</li>
+        <li>메인페이지에 new로 생성하여 objectmanager의 배열에 객체 요소로 등록한다.</li>
+        <li>일정 좌표를 이동한경우 반대로 이동하도록 함수를 설정한다.</li>
         <table>
           <tr>
-            <td colspan="2">저장 처리가 된 이후 나오는 파일</td>
+            <td colspan="1">몬스터 생성</td>
           </tr>
           <tr>
             <td>
-            <img src=""/> 
-            </td>
-            <td>
-              <img src="" width="250px"/>
+              <img src="https://user-images.githubusercontent.com/47166170/58057436-d1b7a200-7b9f-11e9-9f68-4329f6a3c6ad.PNG" width="250px"/>
             </td>
           </tr>
         </table>
