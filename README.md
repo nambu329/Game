@@ -2,7 +2,7 @@
 <ul>
   <li>개발기간 : 2019-02-17 ~ 2019-02-24</li>
   <li>인원 : 1명</li>
-  <li>개발환경 : JavaSE, Oracle</li>
+  <li>개발환경 : JavaScript</li>
   <li>개발목적 : 1.플랫포머 형식의 게임제작 2.다양한 객체활용과 상속을 이용해 코드작성 숙달</li>
 </ul>
 
@@ -88,7 +88,7 @@
   </tr>
   <tr>
     <td>
-    <img src="https://user-images.githubusercontent.com/47166170/57373746-0e64c000-71d4-11e9-9d9d-31aa436c8e95.PNG" width="250px"/>
+    <img src="" width="250px"/>
     </td>
     <td>
       ▶ 단축키를 활용한 엑셀 저장<br>
