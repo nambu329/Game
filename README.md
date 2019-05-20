@@ -103,6 +103,30 @@
   </tr>
   <tr>
     <td>
+      객체별(ex : 눈과 몬스터) 충돌감지와 제거호출
+    </td>
+    <td>
+      ▶ 충돌 처리<br>
+      <ul>
+        <li>충돌이 일어난 타입에 따라 objectManager의 배열에서 각 타입의 배열인덱스를 제거.</li>
+        <table>
+          <tr>
+            <td colspan="2">충돌에 따른 처리</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="https://user-images.githubusercontent.com/47166170/58058262-26a8e780-7ba3-11e9-87eb-8af41c50b31d.PNG" width="250px"/>
+            </td>
+             <td>
+              <img src="https://user-images.githubusercontent.com/47166170/58058263-26a8e780-7ba3-11e9-9653-1a94e86cebdf.PNG" width="250px"/>
+            </td>
+          </tr>
+        </table>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
     <img src="https://user-images.githubusercontent.com/47166170/58058104-8fdc2b00-7ba2-11e9-97f6-8edaea56f184.PNG" width="250px"/>
     </td>
     <td>
@@ -110,11 +134,12 @@
       <ul>
         <li>게임 시작시 방향키로 조종하며 z키로 미사일, x키로 점프하며 진행한다.</li>
         <li>시간이 일정시간 경과하면 장애물의 속도가 단계적으로 일정비율 상승.</li>
+        <li>몬스터나 장애물에 맞으면 장애물이나 몬스터가 사라짐과 동시에 체력이 -1.</li>
         <li>눈에 맞은 몬스터는 일정시간 후에 다시 나타난다.</li>
         <li>좌측 위에있는 캐릭터의 목숨이 다 깎이면 게임이 종료되며 점수가 집계된다.</li>
         <table>
           <tr>
-            <td colspan="2">게임 엔진과 결과출력로직, 게임 종료시 화면</td>
+            <td colspan="3">게임 엔진과 결과출력로직, 게임 종료시 화면</td>
           </tr>
           <tr>
             <td>
