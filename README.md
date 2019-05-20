@@ -97,7 +97,6 @@
               <img src="https://user-images.githubusercontent.com/47166170/58057665-a8e3dc80-7ba0-11e9-9ca9-8959f8cedea0.PNG" width="250px"/>
             </td>
           </tr>
-
         </table>
       </ul>
     </td>
