@@ -103,6 +103,59 @@
   </tr>
   <tr>
     <td>
+    <img src="  <tr>
+    <td>
+    <img src="https://user-images.githubusercontent.com/47166170/58057355-88ffe900-7b9f-11e9-8996-ab149f949206.PNG" width="250px"/>
+    </td>
+    <td>
+      ▶ 게임 진행<br>
+      <ul>
+        <li>게임 시작시 방향키로 조종하며 z키로 미사일, x키로 점프하며 진행한다.</li>
+        <li>시간이 일정시간 경과하면 장애물의 속도가 단계적으로 일정비율 상승.</li>
+        <li>눈에 맞은 몬스터는 일정시간 후에 다시 나타난다.</li>
+        <li>좌측 위에있는 캐릭터의 목숨이 다 깎이면 게임이 종료되며 점수가 집계된다.</li>
+        <table>
+          <tr>
+            <td colspan="2">게임 엔진과 결과출력로직, 게임 종료시 화면</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="https://user-images.githubusercontent.com/47166170/58057933-e7c66200-7ba1-11e9-8552-b97adfe71705.PNG" width="250px"/>
+            </td>
+             <td>
+              <img src="https://user-images.githubusercontent.com/47166170/58057860-9d44e580-7ba1-11e9-81cf-122e3232a4fe.PNG" width="250px"/>
+            </td>
+          </tr>
+        </table>
+      </ul>
+    </td>
+  </tr>" width="250px"/>
+    </td>
+    <td>
+      ▶ 메인 캐릭터 구현<br>
+      <ul>
+        <li>캐릭터 이미지 프레임을 위해 여러 개의 이미지를 등록한다.</li>
+        <li>방향키마다 이미지 순서를 순환시켜 자연스러운 이동이 가능하게한다.</li>
+        <li>특정키를 누르면 투사체(눈) 객체를 생성하여 매개변수로 넣은 x의 속도만큼 이동하도록 구현한다.</li>
+        <li>캐릭터 이미지에 충돌을 감지할 수 있는 바를 만들어 충돌감지를 할 수 있게 한다..</li>
+        <table>
+          <tr>
+            <td colspan="2">캐릭터 생성(충돌감지용 바와 애니메이션 처리)</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="https://user-images.githubusercontent.com/47166170/58057664-a8e3dc80-7ba0-11e9-8880-48736393816c.PNG" width="250px"/>
+            </td>
+             <td>
+              <img src="https://user-images.githubusercontent.com/47166170/58057665-a8e3dc80-7ba0-11e9-9ca9-8959f8cedea0.PNG" width="250px"/>
+            </td>
+          </tr>
+        </table>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
     후기
     </td>
     <td>
